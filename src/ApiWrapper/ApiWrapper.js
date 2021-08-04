@@ -9,6 +9,7 @@ import ShareIcon from '@material-ui/icons/Share';
 const styles = theme => ({
     rootContainer: {
         //border: '1px solid black',
+        padding: '2vw',
         backgroundColor: '#fdf3f3',
     },
     gridContainer: {
@@ -42,10 +43,17 @@ const styles = theme => ({
         border: '1px dotted red',
     },
     ingredientsList: {
-       //  border: '1px solid yellow'
+        paddingLeft: '10px',
+       
+    },
+    ingredientsListItem: {
+        listStyleType: "none",
     },
     measurementList: {
-
+        paddingLeft: '10px',
+    },
+    measurementListItem: {
+        listStyleType: "none",
     },
 });
 
@@ -119,7 +127,7 @@ class Apiwrapper extends React.Component {
                                         .map(function(key, index) { return strIngredients[key] })
                                         .slice(9,28);
         const newStrIngredientsList = strIngredientsList.filter(function (el) { return el.trim(); })
-                                                        .map((item) => { return <li>{item}</li> });
+                                                        .map((item) => { return <li className={this.props.classes.ingredientsListItem}>{item}</li> });
 
         //map Measurements
         const strMeasurements = this.state.measurementArray;
@@ -127,7 +135,7 @@ class Apiwrapper extends React.Component {
                                         .map(function(key,index){ return strMeasurements[key] })
                                         .slice(29, 48);
 
-        const newStrMeasurementList = strMeasurementList.filter(function (element) { return element.trim(); }).map((item) => <li>{item}</li>)
+        const newStrMeasurementList = strMeasurementList.filter(function (element) { return element.trim(); }).map((item) => <li className={this.props.classes.measurementListItem}>{item}</li>)
 
         
         return (
@@ -178,11 +186,13 @@ class Apiwrapper extends React.Component {
                         </Button>
                     </Grid>             
                     <Grid container className={this.props.classes.ingredientContainer} xs={12} sm={6} lg={3} xl={3}>
-                        <Grid className={this.props.classes.ingredientsList} item xs={12}>
-                            <ul>{newStrIngredientsList}</ul>
+                        <Grid item >
+                            <ul className={this.props.classes.ingredientsList}>
+                            {newStrIngredientsList}</ul>
                         </Grid>
-                        <Grid className={this.props.classes.measurementList} item xs={12}>
-                            <ul>{newStrMeasurementList}</ul>
+                        <Grid item >
+                            <ul className={this.props.classes.measurementList}>
+                            {newStrMeasurementList}</ul>
                         </Grid>
                     </Grid>
                 
