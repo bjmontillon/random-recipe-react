@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/random-recipe-react.git/static/css/main.a617e044.chunk.css",
-    "main.js": "/random-recipe-react.git/static/js/main.a3b7aa53.chunk.js",
-    "main.js.map": "/random-recipe-react.git/static/js/main.a3b7aa53.chunk.js.map",
-    "runtime-main.js": "/random-recipe-react.git/static/js/runtime-main.93d53328.js",
-    "runtime-main.js.map": "/random-recipe-react.git/static/js/runtime-main.93d53328.js.map",
-    "static/js/2.e639408e.chunk.js": "/random-recipe-react.git/static/js/2.e639408e.chunk.js",
-    "static/js/2.e639408e.chunk.js.map": "/random-recipe-react.git/static/js/2.e639408e.chunk.js.map",
-    "static/js/3.ed6ad005.chunk.js": "/random-recipe-react.git/static/js/3.ed6ad005.chunk.js",
-    "static/js/3.ed6ad005.chunk.js.map": "/random-recipe-react.git/static/js/3.ed6ad005.chunk.js.map",
-    "index.html": "/random-recipe-react.git/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/random-recipe-react.git/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.e639408e.chunk.js.LICENSE.txt": "/random-recipe-react.git/static/js/2.e639408e.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/random-recipe-react.git/static/media/logo.6ce24c58.svg"
+    "main.css": "/random-recipe-react/static/css/main.a617e044.chunk.css",
+    "main.js": "/random-recipe-react/static/js/main.a3b7aa53.chunk.js",
+    "main.js.map": "/random-recipe-react/static/js/main.a3b7aa53.chunk.js.map",
+    "runtime-main.js": "/random-recipe-react/static/js/runtime-main.8f0a24a3.js",
+    "runtime-main.js.map": "/random-recipe-react/static/js/runtime-main.8f0a24a3.js.map",
+    "static/js/2.e639408e.chunk.js": "/random-recipe-react/static/js/2.e639408e.chunk.js",
+    "static/js/2.e639408e.chunk.js.map": "/random-recipe-react/static/js/2.e639408e.chunk.js.map",
+    "static/js/3.ed6ad005.chunk.js": "/random-recipe-react/static/js/3.ed6ad005.chunk.js",
+    "static/js/3.ed6ad005.chunk.js.map": "/random-recipe-react/static/js/3.ed6ad005.chunk.js.map",
+    "index.html": "/random-recipe-react/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/random-recipe-react/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.e639408e.chunk.js.LICENSE.txt": "/random-recipe-react/static/js/2.e639408e.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/random-recipe-react/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.93d53328.js",
+    "static/js/runtime-main.8f0a24a3.js",
     "static/js/2.e639408e.chunk.js",
     "static/css/main.a617e044.chunk.css",
     "static/js/main.a3b7aa53.chunk.js"
