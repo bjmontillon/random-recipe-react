@@ -118,7 +118,7 @@ class Apiwrapper extends React.Component {
         const strIngredientsList = Object.keys(strIngredients)
                                         .map(function(key, index) { return strIngredients[key] })
                                         .slice(9,28);
-        const newStrIngredientsList = strIngredientsList.filter(function (el) { return el })
+        const newStrIngredientsList = strIngredientsList.filter(function (el) { return el.trim(); })
                                                         .map((item) => { return <li>{item}</li> });
 
         //map Measurements
@@ -127,7 +127,7 @@ class Apiwrapper extends React.Component {
                                         .map(function(key,index){ return strMeasurements[key] })
                                         .slice(29, 48);
 
-        const newStrMeasurementList = strMeasurementList.filter(function (el) { return el }).map((item) => <li>{item}</li>)
+        const newStrMeasurementList = strMeasurementList.filter(function (element) { return element.trim(); }).map((item) => <li>{item}</li>)
 
         
         return (

@@ -6,7 +6,6 @@ const useStyles = makeStyles({
     headerContainer: {
         borderTop: '1px solid black',
         borderBottom: '1px solid black',
-        fontFamily: "'Quicksand', sans-serif",
 
     },
     headerTitle: {
