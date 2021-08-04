@@ -36,15 +36,17 @@ const styles = theme => ({
         //border: '1px solid blue',
     },
     gridTwo: {
-        //border: '1px solid black',
+        border: '1px solid black',
         textAlign: 'center',
+        padding: '10px',
     },
     ingredientContainer: {
         border: '1px dotted red',
+        fontSize: '.8rem',
     },
     ingredientsList: {
         paddingLeft: '10px',
-       
+        
     },
     ingredientsListItem: {
         listStyleType: "none",
@@ -170,8 +172,6 @@ class Apiwrapper extends React.Component {
                             <IconButton aria-label="share">
                                 <ShareIcon />
                             </IconButton>
-                            
-                            
                         </Card>
                     </Grid>
 
@@ -185,7 +185,7 @@ class Apiwrapper extends React.Component {
                         Random Recipe
                         </Button>
                     </Grid>             
-                    <Grid container className={this.props.classes.ingredientContainer} xs={12} sm={6} lg={3} xl={3}>
+                    <Grid container className={this.props.classes.ingredientContainer} xs={12} sm={6} lg={5} xl={5}>
                         <Grid item >
                             <ul className={this.props.classes.ingredientsList}>
                             {newStrIngredientsList}</ul>
