@@ -36,7 +36,6 @@ const styles = theme => ({
         //border: '1px solid blue',
     },
     gridTwo: {
-        border: '1px solid black',
         textAlign: 'center',
         padding: '10px',
     },
