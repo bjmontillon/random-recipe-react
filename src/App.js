@@ -7,6 +7,7 @@ import { Container } from '@material-ui/core'
 import Header from './Header/Header'
 import Navbar from './Navbar/Navbar'
 import Apiwrapper from './ApiWrapper/ApiWrapper'
+import Reactplayer from './Reactplayer/reactplayer'
 
 const useStyles = makeStyles ({
   appContainer: {
@@ -22,6 +23,7 @@ function App() {
       <Header />
       <Navbar />
       <Apiwrapper />
+      <Reactplayer />
     </Container>
   );
 }

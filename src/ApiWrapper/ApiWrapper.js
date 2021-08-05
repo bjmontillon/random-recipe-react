@@ -6,6 +6,8 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShareIcon from '@material-ui/icons/Share';
 
 
+
+
 const styles = theme => ({
     rootContainer: {
         //border: '1px solid black',
@@ -16,7 +18,7 @@ const styles = theme => ({
         //border: '1px dotted black',
     },
     rootCard: {
-        maxWidth: 345,
+        
     },
     media: {
         height: 0,
@@ -40,7 +42,6 @@ const styles = theme => ({
         padding: '10px',
     },
     ingredientContainer: {
-        border: '1px dotted red',
         fontSize: '.8rem',
     },
     ingredientsList: {
@@ -74,6 +75,7 @@ class Apiwrapper extends React.Component {
             strTag: null,
             ingredientArray: [],
             measurementArray: [],
+            strYoutube : null,
         };
          this.randomRecipe = this.randomRecipe.bind(this);
     };
@@ -103,6 +105,7 @@ class Apiwrapper extends React.Component {
                 strSource: json.meals[0].strSource,
                 ingredientArray: json.meals[0],
                 measurementArray: json.meals[0],
+                strYoutube: json.meals[0].strYoutube,
             });
 
                 let trialMeal = json.meals[0];
@@ -116,7 +119,7 @@ class Apiwrapper extends React.Component {
     randomRecipe () {
         this.fetchingRecipe();
     }
-
+    
     
     
     render () {
@@ -138,12 +141,12 @@ class Apiwrapper extends React.Component {
 
         const newStrMeasurementList = strMeasurementList.filter(function (element) { return element.trim(); }).map((item) => <li className={this.props.classes.measurementListItem}>{item}</li>)
 
-        
+        //const me = this.state.strYoutube;
         return (
-            <Container className={this.props.classes.rootContainer} spacing={1}>
+            <Container className={this.props.classes.rootContainer} spacing={2}>
                 <Grid className={this.props.classes.gridContainer} container xs={12}>
-                    <Grid className={this.props.classes.gridOne} item xs={12} sm={6} lg={4} xl={4}>
-                        <Card className={this.props.classes.rootCard}>
+                    <Grid className={this.props.classes.gridOne} item xs={12} sm={6} lg={6} xl={6} >
+                        <Card className={this.props.classes.rootCard} >
                             <CardHeader 
                                 avatar={
                                     <Avatar aria-label="recipe" className={this.props.classes.avatar}>
@@ -172,31 +175,34 @@ class Apiwrapper extends React.Component {
                                 <ShareIcon />
                             </IconButton>
                         </Card>
+                        <Grid item className={this.props.classes.gridTwo}>  
+                            <Button onClick={this.randomRecipe}
+                                endIcon={<AutorenewIcon />} 
+                                className="myButton" 
+                                color="primary" 
+                                variant='outlined'
+                                size='small'
+                                disabled={this.state.isFetchingRecipe}>
+                            Random Recipe
+                            </Button>
+                        </Grid>
                     </Grid>
 
-                    <Grid item className={this.props.classes.gridTwo}  xs={12} sm={6} lg={3} xl={3}>  
-                        <Button onClick={this.randomRecipe}
-                            endIcon={<AutorenewIcon />} 
-                            className="myButton" 
-                            color="primary" 
-                            variant='outlined'
-                            size='small'
-                            disabled={this.state.isFetchingRecipe}>
-                        Random Recipe
-                        </Button>
-                    </Grid>             
-                    <Grid container className={this.props.classes.ingredientContainer} xs={12} sm={6} lg={5} xl={5}>
-                        <Grid item >
+                               
+                    <Grid container className={this.props.classes.ingredientContainer} xs={12} sm={6} lg={6} xl={6}>
+                        <Grid item xs={6} >
                             <ul className={this.props.classes.ingredientsList}>
                             {newStrIngredientsList}</ul>
                         </Grid>
-                        <Grid item >
+                        <Grid item xs={6} >
                             <ul className={this.props.classes.measurementList}>
                             {newStrMeasurementList}</ul>
                         </Grid>
                     </Grid>
                 
                 </Grid>
+                
+
             </Container>
 
         )
