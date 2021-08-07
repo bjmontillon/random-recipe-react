@@ -31,6 +31,8 @@ class App extends React.Component {
       strTags: null,
       strCategory: null,
       strArea: null,
+      ingredientArray: [],
+      measurementArray: [],
     };
   };
 
@@ -56,6 +58,8 @@ class App extends React.Component {
           strTags: json.meals[0].strTags,
           strCategory: json.meals[0].strCategory,
           strArea: json.meals[0].strArea,
+          ingredientArray: json.meals[0],
+          measurementArray: json.meals[0],
         })
         let trialMeal = json.meals[0];
                 console.clear();
@@ -65,7 +69,24 @@ class App extends React.Component {
 
   render () {
 
+// add ingredients list at ingredient component and a button component
 
+
+         //Map Ingredients
+         const strIngredients = this.state.ingredientArray;
+         const strIngredientsList = Object.keys(strIngredients)
+                                         .map(function(key, index) { return strIngredients[key] })
+                                         .slice(9,28);
+         const newStrIngredientsList = strIngredientsList.filter(function (el) { return el.trim(); })
+                                                         .map((item) => { return <li className={this.props.classes.ingredientsListItem}>{item}</li> });
+
+         //map Measurements
+         const strMeasurements = this.state.measurementArray;
+         const strMeasurementList = Object.keys(strMeasurements)
+                                         .map(function(key,index){ return strMeasurements[key] })
+                                         .slice(29, 48);
+
+       const newStrMeasurementList = strMeasurementList.filter(function (element) { return element.trim(); }).map((item) => <li className={this.props.classes.measurementListItem}>{item}</li>)
   
     return (
       
@@ -81,7 +102,7 @@ class App extends React.Component {
           strCategory={this.state.strCategory}
           strArea={this.state.strArea}
           />
-        <Ingredients  />
+        <Ingredients newStrIngredientsList={newStrIngredientsList} newStrMeasurementList={newStrMeasurementList}/>
         <Reactplayer url={this.state.strYoutube} />
       </Container>
     );

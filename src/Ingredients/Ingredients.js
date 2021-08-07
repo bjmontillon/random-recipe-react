@@ -1,14 +1,21 @@
 import React from 'react'
 import { Grid } from '@material-ui/core'
+
+
 const Ingredients = (props) => {
 
     return (
         <Grid container>
             <Grid item>
-            <h1> List 1</h1>
+                <h1>Ingredients</h1>
+            </Grid>
+            <Grid item>
+            <ul >
+                             {props.newStrIngredientsList}</ul>
             </Grid>
             <Grid item> 
-            <h1> List 2</h1>
+            <ul>
+                             {props.newStrMeasurementList}</ul>
             </Grid>
         </Grid>
     )
