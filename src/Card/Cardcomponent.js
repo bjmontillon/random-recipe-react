@@ -11,11 +11,12 @@ const useStyles = makeStyles  ({
         padding: '2vw',
         backgroundColor: '#fdf3f3',
     },
-    gridContainer: {
-        //border: '1px dotted black',
+    cardContainer: {
+        border: '1px dotted red',
+        padding: '10px',
     },
     rootCard: {
-        
+        minWidth: '320px',
     },
     media: {
         height: 0,
@@ -38,36 +39,36 @@ const Cardcomponent = (props) => {
     const classes = useStyles();
 
     return (
-        <Grid container>
-        <Card className={classes.rootCard} >
-        <CardHeader 
-            avatar={
-                <Avatar aria-label="recipe" className={classes.avatar}>
-                    {props.strMeal}
-                </Avatar>
-            }
-            title={props.cycleMethod? 'Loading Recipe...': props.strMeal}
-            subheader={<Link href={props.strSource} 
-                            target='_blank' 
-                            rel='noreferrer'>
-                            <LinkIcon />
-                        </Link> }
-                            />
-        
-        <CardMedia className={classes.media} image={props.strThumb} title='Random-recipe'/>
+        <Grid container className={classes.cardContainer}>
+            <Card className={classes.rootCard} >
+                <CardHeader 
+                    avatar={
+                        <Avatar aria-label="recipe" className={classes.avatar}>
+                            {props.strMeal}
+                        </Avatar>
+                    }
+                    title={props.cycleMethod? 'Loading Recipe...': props.strMeal}
+                    subheader={<Link href={props.strSource} 
+                                    target='_blank' 
+                                    rel='noreferrer'>
+                                    <LinkIcon />
+                                </Link> }
+                                    />
+                
+                <CardMedia className={classes.media} image={props.strThumb} title='Random-recipe'/>
 
-        <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
-                {props.cycleMethod? 'Tags' : props.strTags + " | " + props.strCategory + " | " + props.strArea}
-            </Typography>
-        </CardContent>
-        <IconButton aria-label="add to favorites">
-            <FavoriteBorderIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-            <ShareIcon />
-        </IconButton>
-    </Card>
+                <CardContent>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        {props.cycleMethod? 'Tags' : props.strTags + " | " + props.strCategory + " | " + props.strArea}
+                    </Typography>
+                </CardContent>
+                <IconButton aria-label="add to favorites">
+                    <FavoriteBorderIcon />
+                </IconButton>
+                <IconButton aria-label="share">
+                    <ShareIcon />
+                </IconButton>
+            </Card>
         </Grid>
     )
 

@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     headerContainer: {
         borderTop: '1px solid black',
         borderBottom: '1px solid black',
-
+        textAlign: 'center'
     },
     headerTitle: {
         fontWeight: '600',

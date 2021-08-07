@@ -1,18 +1,19 @@
-import React from 'react'
+import React from 'react';
 import './App.css';
 
 import {withStyles, Container  } from '@material-ui/core';
 
-import Header from './Header/Header'
-import Navbar from './Navbar/Navbar'
-import Cardcomponent from './Card/Cardcomponent'
-import Ingredients from './Ingredients/Ingredients'
-import Reactplayer from './Reactplayer/reactplayer'
+import Header from './Header/Header';
+import Navbar from './Navbar/Navbar';
+import Cardcomponent from './Card/Cardcomponent';
+import Ingredients from './Ingredients/Ingredients';
+import Instructions from './Instructions/Instructions';
+import Reactplayer from './Reactplayer/reactplayer';
 
 const styles = theme => ({
   appContainer: {
     border: 'dotted 1px black',
-
+    backgroundColor: '#f7f7f7'
   },
 
 });
@@ -33,6 +34,7 @@ class App extends React.Component {
       strArea: null,
       ingredientArray: [],
       measurementArray: [],
+      strInstructions: null,
     };
   };
 
@@ -60,10 +62,11 @@ class App extends React.Component {
           strArea: json.meals[0].strArea,
           ingredientArray: json.meals[0],
           measurementArray: json.meals[0],
+          strInstructions: json.meals[0].strInstructions,
         })
-        let trialMeal = json.meals[0];
-                console.clear();
-                console.log(trialMeal);
+        // let trialMeal = json.meals[0].strInstructions.replace("\\n", "\n");
+        //         console.clear();
+        //         console.log(trialMeal);
     })
   }
 
@@ -86,8 +89,9 @@ class App extends React.Component {
                                          .map(function(key,index){ return strMeasurements[key] })
                                          .slice(29, 48);
 
-       const newStrMeasurementList = strMeasurementList.filter(function (element) { return element.trim(); }).map((item) => <li className={this.props.classes.measurementListItem}>{item}</li>)
-  
+        const newStrMeasurementList = strMeasurementList.filter(function (element) { return element.trim(); }).map((item) => <li className={this.props.classes.measurementListItem}>{item}</li>)
+
+        
     return (
       
       <Container className={this.props.classes.appContainer} maxWidth='md'>
@@ -103,6 +107,7 @@ class App extends React.Component {
           strArea={this.state.strArea}
           />
         <Ingredients newStrIngredientsList={newStrIngredientsList} newStrMeasurementList={newStrMeasurementList}/>
+        <Instructions strInstructions={this.state.strInstructions} />
         <Reactplayer url={this.state.strYoutube} />
       </Container>
     );
