@@ -79,9 +79,9 @@ class App extends React.Component {
           measurementArray: json.meals[0],
           strInstructions: json.meals[0].strInstructions,
         })
-        // let trialMeal = json.meals[0].strInstructions.replace("\\n", "\n");
-        //         console.clear();
-        //         console.log(trialMeal);
+        let trialMeal = json.meals[0];
+                 console.clear();
+                 console.log(trialMeal);
     })
   }
 

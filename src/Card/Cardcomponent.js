@@ -4,6 +4,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShareIcon from '@material-ui/icons/Share';
 import LinkIcon from '@material-ui/icons/Link';
 import { makeStyles } from '@material-ui/core/styles';
+import { FacebookButton, FacebookCount } from "react-social";
 
 const useStyles = makeStyles  ({
     rootContainer: {
@@ -42,6 +43,8 @@ const Cardcomponent = (props) => {
 
     const classes = useStyles();
 
+    const url = props.strSource;
+
     return (
         <Grid container className={classes.cardContainer}>
             <Card className={classes.rootCard} >
@@ -70,13 +73,13 @@ const Cardcomponent = (props) => {
                     <FavoriteBorderIcon />
                 </IconButton>
                 <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="hello" data-url="https://bjmontillon.github.io/random-recipe-react/" data-show-count="false"><ShareIcon /></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                
                 
                 </IconButton>
+                <FacebookButton url={url} appId={525409665183526}>
+                    <FacebookCount url={url} />
+                    {" Share " + url}
+                </FacebookButton>
+
             </Card>
         </Grid>
     )
