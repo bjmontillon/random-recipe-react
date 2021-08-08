@@ -10,6 +10,7 @@ import Cardcomponent from './Card/Cardcomponent';
 import Ingredients from './Ingredients/Ingredients';
 import Instructions from './Instructions/Instructions';
 import Reactplayer from './Reactplayer/reactplayer';
+import Footer from './Footer/Footer';
 
 const styles = theme => ({
   appContainer: {
@@ -18,7 +19,7 @@ const styles = theme => ({
   },
   sectionTwo: {
     margin: '10px 0',
-    border: 'dotted 1px black',
+    //border: 'dotted 1px black',
     minHeight: '56vh',
     overflow: 'hidden',
   },
@@ -112,12 +113,12 @@ class App extends React.Component {
         
     return (
       
-      <Container className={this.props.classes.appContainer} maxWidth='md'>
-      <Grid container lg={12}>
-        <Grid Item xs={12}><Header /></Grid>
-        <Grid Item xs={12}><Navbar /></Grid>
-        <Grid container xs={12} className={this.props.classes.sectionTwo}>
-          <Grid Item xs={12} lg={6}>
+      <Container className={this.props.classes.appContainer} maxWidth='md' spacing={4}>
+      <Grid container>
+        <Grid item xs={12}><Header /></Grid>
+        <Grid item xs={12}><Navbar /></Grid>
+        <Grid container className={this.props.classes.sectionTwo}>
+          <Grid item xs={12} lg={6}>
               <Cardcomponent 
                 cycleMethod={this.state.isFetchingRecipe} 
                 strMeal={this.state.strMeal} 
@@ -147,13 +148,18 @@ class App extends React.Component {
           </Grid>
         </Grid>
           
-        <Grid Item className={this.props.classes.instructionsContainer} xs={12} lg={6}>
+        <Grid item className={this.props.classes.instructionsContainer} xs={12} lg={6}>
           <Instructions strInstructions={this.state.strInstructions} />
         </Grid>
 
         <Grid item className={this.props.classes.reactPLayer} xs={12} lg={6}>
           <Reactplayer url={this.state.strYoutube} />
         </Grid>
+
+        <Grid item className={this.props.classes.footer} xs={12} lg={12}>
+          <Footer />
+        </Grid>
+
 
         </Grid>
       </Container>

@@ -5,9 +5,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     playerContainer: {
-        padding : '1px',
+        padding : '10px',
         height: '42vh',
-        border: '1px solid black',
+        justifyContent: 'center',
+        alignItems: 'center',
         boxShadow: 'rgb(213, 210, 208) 5px 5px 15px, rgb(255, 255, 255) -5px -5px 15px',
     },
     reactPLayer: {
@@ -24,12 +25,10 @@ const Reactplayer = ({ url }) => {
         return (
             <Grid container className={classes.playerContainer}>
                 <ReactPlayer
-                
-                url = {url}
                 controls = 'true'
-                width = '100%'
+                url = {url}
+                width = '86%'
                 height = '100%'
-                playbackRate = '1'
                 />
             </Grid>
         )
