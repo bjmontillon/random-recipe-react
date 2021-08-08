@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/random-recipe-react/static/css/main.e4e2aafc.chunk.css",
-    "main.js": "/random-recipe-react/static/js/main.7d32bfbf.chunk.js",
-    "main.js.map": "/random-recipe-react/static/js/main.7d32bfbf.chunk.js.map",
-    "runtime-main.js": "/random-recipe-react/static/js/runtime-main.371dc8b4.js",
-    "runtime-main.js.map": "/random-recipe-react/static/js/runtime-main.371dc8b4.js.map",
-    "static/js/2.69324ac4.chunk.js": "/random-recipe-react/static/js/2.69324ac4.chunk.js",
-    "static/js/2.69324ac4.chunk.js.map": "/random-recipe-react/static/js/2.69324ac4.chunk.js.map",
-    "static/js/3.a8620b53.chunk.js": "/random-recipe-react/static/js/3.a8620b53.chunk.js",
-    "static/js/3.a8620b53.chunk.js.map": "/random-recipe-react/static/js/3.a8620b53.chunk.js.map",
+    "main.css": "/random-recipe-react/static/css/main.a163b6fc.chunk.css",
+    "main.js": "/random-recipe-react/static/js/main.448a0ce0.chunk.js",
+    "main.js.map": "/random-recipe-react/static/js/main.448a0ce0.chunk.js.map",
+    "runtime-main.js": "/random-recipe-react/static/js/runtime-main.d7d69992.js",
+    "runtime-main.js.map": "/random-recipe-react/static/js/runtime-main.d7d69992.js.map",
+    "static/js/2.aed4996f.chunk.js": "/random-recipe-react/static/js/2.aed4996f.chunk.js",
+    "static/js/2.aed4996f.chunk.js.map": "/random-recipe-react/static/js/2.aed4996f.chunk.js.map",
+    "static/js/3.4bd5f48d.chunk.js": "/random-recipe-react/static/js/3.4bd5f48d.chunk.js",
+    "static/js/3.4bd5f48d.chunk.js.map": "/random-recipe-react/static/js/3.4bd5f48d.chunk.js.map",
     "index.html": "/random-recipe-react/index.html",
-    "static/css/main.e4e2aafc.chunk.css.map": "/random-recipe-react/static/css/main.e4e2aafc.chunk.css.map",
-    "static/js/2.69324ac4.chunk.js.LICENSE.txt": "/random-recipe-react/static/js/2.69324ac4.chunk.js.LICENSE.txt"
+    "static/css/main.a163b6fc.chunk.css.map": "/random-recipe-react/static/css/main.a163b6fc.chunk.css.map",
+    "static/js/2.aed4996f.chunk.js.LICENSE.txt": "/random-recipe-react/static/js/2.aed4996f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.371dc8b4.js",
-    "static/js/2.69324ac4.chunk.js",
-    "static/css/main.e4e2aafc.chunk.css",
-    "static/js/main.7d32bfbf.chunk.js"
+    "static/js/runtime-main.d7d69992.js",
+    "static/js/2.aed4996f.chunk.js",
+    "static/css/main.a163b6fc.chunk.css",
+    "static/js/main.448a0ce0.chunk.js"
   ]
 }
