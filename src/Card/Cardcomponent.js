@@ -12,11 +12,15 @@ const useStyles = makeStyles  ({
         backgroundColor: '#fdf3f3',
     },
     cardContainer: {
-        border: '1px dotted red',
+        //border: '1px dotted red',
+        minHeight: '330px',
         padding: '10px',
+        justifyContent: 'center'
     },
     rootCard: {
         minWidth: '320px',
+        maxWidth: '320px',
+        boxShadow: 'rgb(213, 210, 208) 5px 5px 15px, rgb(255, 255, 255) -5px -5px 15px',
     },
     media: {
         height: 0,

@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import {withStyles, Container  } from '@material-ui/core';
+import {withStyles, Container, Grid, Button  } from '@material-ui/core';
+import AutorenewIcon from '@material-ui/icons/Autorenew';
 
 import Header from './Header/Header';
 import Navbar from './Navbar/Navbar';
@@ -13,9 +14,20 @@ import Reactplayer from './Reactplayer/reactplayer';
 const styles = theme => ({
   appContainer: {
     border: 'dotted 1px black',
-    backgroundColor: '#f7f7f7'
+    backgroundColor: '#ECF0f3',
   },
-
+  sectionTwo: {
+    margin: '10px 0',
+    border: 'dotted 1px black',
+    minHeight: '56vh',
+    overflow: 'hidden',
+  },
+  buttonContainer: {
+    textAlign: 'center',
+  },
+  instructionsContainer: {
+    minHeight: '20vh',
+  },
 });
 
 
@@ -36,13 +48,15 @@ class App extends React.Component {
       measurementArray: [],
       strInstructions: null,
     };
+    this.randomRecipe = this.randomRecipe.bind(this);
   };
 
   componentDidMount () {
-    this.fetchRecipe();
+    this.randomRecipe();
   }
 
   fetchRecipe () {
+    this.setState ({isFetchingRecipe: true});
     fetch ('https://www.themealdb.com/api/json/v1/1/random.php', {
       method: 'GET',
         headers : {
@@ -70,6 +84,10 @@ class App extends React.Component {
     })
   }
 
+  randomRecipe() {
+    this.fetchRecipe()
+  };
+
   render () {
 
 // add ingredients list at ingredient component and a button component
@@ -95,20 +113,49 @@ class App extends React.Component {
     return (
       
       <Container className={this.props.classes.appContainer} maxWidth='md'>
-        <Header />
-        <Navbar />
-        <Cardcomponent 
-          cycleMethod={this.state.isFetchingRecipe} 
-          strMeal={this.state.strMeal} 
-          strThumb={this.state.strThumb}
-          strSource={this.state.strSource} 
-          strTags={this.state.strTags}
-          strCategory={this.state.strCategory}
-          strArea={this.state.strArea}
-          />
-        <Ingredients newStrIngredientsList={newStrIngredientsList} newStrMeasurementList={newStrMeasurementList}/>
-        <Instructions strInstructions={this.state.strInstructions} />
-        <Reactplayer url={this.state.strYoutube} />
+      <Grid container lg={12}>
+        <Grid Item xs={12}><Header /></Grid>
+        <Grid Item xs={12}><Navbar /></Grid>
+        <Grid container xs={12} className={this.props.classes.sectionTwo}>
+          <Grid Item xs={12} lg={6}>
+              <Cardcomponent 
+                cycleMethod={this.state.isFetchingRecipe} 
+                strMeal={this.state.strMeal} 
+                strThumb={this.state.strThumb}
+                strSource={this.state.strSource} 
+                strTags={this.state.strTags}
+                strCategory={this.state.strCategory}
+                strArea={this.state.strArea}
+                />
+          <Grid item xs={12} className={this.props.classes.buttonContainer}>
+            <Button onClick={this.randomRecipe}
+              endIcon={<AutorenewIcon />} 
+              className="myButton"  
+              color="primary" 
+              variant='contained'
+              size='small'
+              disabled={this.state.isFetchingRecipe}>
+              Random Recipe
+            </Button>
+          </Grid>
+        </Grid>
+
+          
+
+          <Grid item xs={12} lg={6}>
+            <Ingredients newStrIngredientsList={newStrIngredientsList} newStrMeasurementList={newStrMeasurementList}/>
+          </Grid>
+        </Grid>
+          
+        <Grid Item className={this.props.classes.instructionsContainer} xs={12} lg={6}>
+          <Instructions strInstructions={this.state.strInstructions} />
+        </Grid>
+
+        <Grid item className={this.props.classes.reactPLayer} xs={12} lg={6}>
+          <Reactplayer url={this.state.strYoutube} />
+        </Grid>
+
+        </Grid>
       </Container>
     );
   }
