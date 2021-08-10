@@ -17,7 +17,7 @@ const Instructions = (props) => {
     const classes = useStyles();
     return (
         <Grid container className={classes.instructionsContainer}>
-            <Typography variant="body2" color="textSecondary"component='p'>
+            <Typography variant="body2" color="textPrimary"component='p'>
                 {props.strInstructions}
             </Typography>
         </Grid>

@@ -133,7 +133,7 @@ class App extends React.Component {
               endIcon={<AutorenewIcon />} 
               className="myButton"  
               color="primary" 
-              variant='contained'
+              variant='outlined'
               size='small'
               disabled={this.state.isFetchingRecipe}>
               Random Recipe

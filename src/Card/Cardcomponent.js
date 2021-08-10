@@ -6,6 +6,8 @@ import LinkIcon from '@material-ui/icons/Link';
 import { makeStyles } from '@material-ui/core/styles';
 
 
+import { FacebookShareButton, TwitterShareButton, TwitterIcon, FacebookIcon } from 'react-share';
+
 const useStyles = makeStyles  ({
     rootContainer: {
         //border: '1px solid black',
@@ -43,6 +45,11 @@ const Cardcomponent = (props) => {
 
     const classes = useStyles();
 
+
+    //Social Media Buttons
+
+    const size = '1.5rem';
+    const url = props.strSource;
      
 
    // const url = props.strSource;
@@ -80,7 +87,23 @@ const Cardcomponent = (props) => {
                     />
                 </IconButton>
             
-                
+                <FacebookShareButton 
+                    url = {url}
+                    quote = 'A must try recipe'
+                    hashtag = '#randomrecipe'
+                    >
+                    <FacebookIcon size={size}/>
+                </FacebookShareButton>
+                        
+                <TwitterShareButton
+                    url = {url}
+                    //via = 'hello'
+                    title = 'Random-Recipe'
+                    hashtags = {['randomrecipe', props.strCategory, props.strTags, props.strArea]}
+                    >
+                    <TwitterIcon size={size} />
+                </TwitterShareButton>
+            
             </Card>
         </Grid>
     )
