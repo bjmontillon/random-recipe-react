@@ -1,7 +1,7 @@
 import React from 'react';
-import { Grid, Card, CardHeader, CardMedia, CardContent, Avatar, Link, Typography, IconButton } from '@material-ui/core';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import ShareIcon from '@material-ui/icons/Share';
+import { Grid, Card, CardHeader, CardMedia, CardContent, Avatar, Link, Typography,  } from '@material-ui/core';
+//import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+//import ShareIcon from '@material-ui/icons/Share';
 import LinkIcon from '@material-ui/icons/Link';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -48,11 +48,14 @@ const Cardcomponent = (props) => {
 
     //Social Media Buttons
 
-    const size = '1.5rem';
+    const size = '2rem';
     const url = props.strSource;
      
 
    // const url = props.strSource;
+    //    <IconButton aria-label="add to favorites"><FavoriteBorderIcon /> </IconButton>
+    //    <IconButton aria-label="share"> <ShareIcon /></IconButton>
+
 
     return (
         <Grid container className={classes.cardContainer}>
@@ -78,14 +81,7 @@ const Cardcomponent = (props) => {
                         {props.cycleMethod? 'Tags' : props.strTags + " | " + props.strCategory + " | " + props.strArea}
                     </Typography>
                 </CardContent>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteBorderIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon 
-                    
-                    />
-                </IconButton>
+                
             
                 <FacebookShareButton 
                     url = {url}
