@@ -21,14 +21,14 @@ const Footer = () => {
 
     return (
         <Grid container className={classes.footerContainer}>
-            <Grid item xs={12} lg={1}>
+            <Grid item xs={1}>
                 <Link href='https://www.facebook.com/profile.php?id=100011215170729' rel='noreferrer noopener' target='_blank' underline='none' color="inherit"><FacebookIcon /></Link>
             </Grid>
-            <Grid item xs={12} lg={1}>
+            <Grid item xs={1}>
             <Link href='https://twitter.com/PangilinanBj' rel='noreferrer noopener' target='_blank'underline='none' color="inherit"><TwitterIcon /></Link>
                 
             </Grid>
-            <Grid item xs={12} lg={1}>
+            <Grid item xs={1}>
             <Link href='https://github.com/bjmontillon' rel='noreferrer noopener' target='_blank' underline='none' color="inherit"><GitHubIcon /></Link>
                 
             </Grid>
