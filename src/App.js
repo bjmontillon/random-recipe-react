@@ -132,8 +132,8 @@ class App extends React.Component {
             <Button onClick={this.randomRecipe}
               endIcon={<AutorenewIcon />} 
               className="myButton"  
-              color="primary" 
-              variant='outlined'
+              color='secondary'
+              variant='contained'
               size='small'
               disabled={this.state.isFetchingRecipe}>
               Random Recipe
