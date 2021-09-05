@@ -1,12 +1,14 @@
 import React from 'react';
-import { Grid, Typography, Link } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
+import LoginButton from '../Login/Login';
+import LogoutButton from '../Login/Logout';
+import Profile from '../Login/Profile';
 
 const useStyles = makeStyles({
     headerContainer: {
         borderTop: '1px solid black',
         borderBottom: '1px solid black',
-        textAlign: 'center'
     },
     headerTitle: {
         fontWeight: '600',
@@ -18,14 +20,15 @@ const useStyles = makeStyles({
 function Navbar () {
     const classes = useStyles();
     return (
-        <Grid className={classes.headerContainer} container xs={12}>
-            <Grid item xs={12}>
-                <Typography>
-                    <Link className={classes.headerTitle}>
-                        Home
-                    </Link>
-                </Typography>
-            </Grid>
+        <Grid className={classes.headerContainer} 
+        container
+        xs={12}
+        direction="row"
+        justifyContent="flex-end"
+        alignItems="center">
+            <Grid item><LoginButton /></Grid>
+            <Grid item><LogoutButton /></Grid>
+            <Grid item><Profile /></Grid>
         </Grid>
 
     )
