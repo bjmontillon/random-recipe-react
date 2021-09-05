@@ -9,6 +9,12 @@ const useStyles = makeStyles({
         margin: '0',
         fontSize: '.6rem'
     },
+    userEmail: {
+        padding:'0',
+        margin:'0',
+        fontSize: '.5rem',
+        fontStyle: 'italic',
+    }
 })
 
 const Profile = () => {
@@ -18,7 +24,7 @@ const Profile = () => {
         isAuthenticated && (
         <div>
         <p className={ classes.userName }>{user.nickname}</p>
-        <p className={ classes.userName }>{user.name}</p>
+        <p className={ classes.userEmail }>{user.name}</p>
         
         </div>
         )
