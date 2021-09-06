@@ -25,7 +25,9 @@ function Navbar () {
         xs={12}
         direction="row"
         justifyContent="flex-end"
-        alignItems="center">
+        alignItems="center"
+        spacing={2}>
+        
             <Grid item><LoginButton /></Grid>
             <Grid item><LogoutButton /></Grid>
             <Grid item><Profile /></Grid>
