@@ -7,13 +7,14 @@ const useStyles = makeStyles({
     userName: {
         padding: '0',
         margin: '0',
-        fontSize: '.6rem'
+        fontSize: '.8rem'
     },
     userEmail: {
         padding:'0',
         margin:'0',
         fontSize: '.5rem',
         fontStyle: 'italic',
+        textDecoration: 'underline',
     }
 })
 
