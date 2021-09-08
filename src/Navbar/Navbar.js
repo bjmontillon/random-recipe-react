@@ -15,6 +15,9 @@ const useStyles = makeStyles({
         fontFamily: "'Quicksand', sans-serif",
         color: 'black',
     },
+    profileWrapper: {
+        border: '1px dotted black',
+    },
 })
 
 function Navbar () {
@@ -27,10 +30,10 @@ function Navbar () {
         justifyContent="flex-end"
         alignItems="center"
         spacing={2}>
-        
+            <Grid item className={classes.profileWrapper} xs={8}><Profile /></Grid>
             <Grid item><LoginButton /></Grid>
             <Grid item><LogoutButton /></Grid>
-            <Grid item><Profile /></Grid>
+           
         </Grid>
 
     )
