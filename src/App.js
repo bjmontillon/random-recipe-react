@@ -6,6 +6,7 @@ import AutorenewIcon from '@material-ui/icons/Autorenew';
 
 import Header from './Header/Header';
 import Navbar from './Navbar/Navbar';
+import SectionOne from './Section/Section';
 import Cardcomponent from './Card/Cardcomponent';
 import Ingredients from './Ingredients/Ingredients';
 import Instructions from './Instructions/Instructions';
@@ -14,7 +15,6 @@ import Footer from './Footer/Footer';
 
 const styles = theme => ({
   appContainer: {
-    border: 'dotted 1px black',
     backgroundColor: '#ECF0f3',
   },
   sectionTwo: {
@@ -117,6 +117,7 @@ class App extends React.Component {
       <Grid container>
         <Grid item xs={12}><Header /></Grid>
         <Grid item xs={12}><Navbar /></Grid>
+        <Grid item xs={12}><SectionOne /></Grid>
         <Grid container className={this.props.classes.sectionTwo}>
           <Grid item xs={12} lg={6}>
               <Cardcomponent 
