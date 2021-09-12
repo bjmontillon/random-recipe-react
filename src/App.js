@@ -55,10 +55,11 @@ class App extends React.Component {
   componentDidMount () {
     this.randomRecipe();
   }
-
+  //
   fetchRecipe () {
+    const url = "https://www.themealdb.com/api/json/v1/1/random.php";
     this.setState ({isFetchingRecipe: true});
-    fetch ('https://www.themealdb.com/api/json/v1/1/random.php', {
+    fetch (url,  {
       method: 'GET',
         headers : {
           Accept: "application/json",
@@ -75,11 +76,11 @@ class App extends React.Component {
           strTags: json.meals[0].strTags,
           strCategory: json.meals[0].strCategory,
           strArea: json.meals[0].strArea,
-          ingredientArray: json.meals[0],
-          measurementArray: json.meals[0],
+          ingredientArray: json,
+          measurementArray: json,
           strInstructions: json.meals[0].strInstructions,
         })
-        let trialMeal = json.meals[0];
+        let trialMeal = json;
                  console.clear();
                  console.log(trialMeal);
     })
