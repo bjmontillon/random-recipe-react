@@ -55,11 +55,11 @@ class App extends React.Component {
   componentDidMount () {
     this.randomRecipe();
   }
-  //
+  
   fetchRecipe () {
-    const url = "https://www.themealdb.com/api/json/v1/1/random.php";
+    //const url = "https://www.themealdb.com/api/json/v1/1/random.php";
     this.setState ({isFetchingRecipe: true});
-    fetch (url,  {
+    fetch ("https://www.themealdb.com/api/json/v1/1/random.php", {
       method: 'GET',
         headers : {
           Accept: "application/json",
