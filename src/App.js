@@ -16,6 +16,7 @@ import Footer from './Footer/Footer';
 const styles = theme => ({
   appContainer: {
     backgroundColor: '#ECF0f3',
+    padding: '0'
   },
   sectionTwo: {
     margin: '10px 0',
@@ -76,13 +77,15 @@ class App extends React.Component {
           strTags: json.meals[0].strTags,
           strCategory: json.meals[0].strCategory,
           strArea: json.meals[0].strArea,
-          ingredientArray: json,
-          measurementArray: json,
+          ingredientArray: json.meals[0],
+          measurementArray: json.meals[0],
           strInstructions: json.meals[0].strInstructions,
+          
         })
         let trialMeal = json;
                  console.clear();
                  console.log(trialMeal);
+                 
     })
   }
 
@@ -100,6 +103,7 @@ class App extends React.Component {
          const strIngredientsList = Object.keys(strIngredients)
                                          .map(function(key, index) { return strIngredients[key] })
                                          .slice(9,28);
+          
          const newStrIngredientsList = strIngredientsList.filter(function (el) { return el.trim(); })
                                                          .map((item) => { return <li className={this.props.classes.ingredientsListItem}>{item}</li> });
 
@@ -114,7 +118,7 @@ class App extends React.Component {
         
     return (
       
-      <Container className={this.props.classes.appContainer} maxWidth='md' spacing={4}>
+      <Container className={this.props.classes.appContainer}  spacing={4}>
       <Grid container>
         <Grid item xs={12}><Header /></Grid>
         <Grid item xs={12}><Navbar /></Grid>
