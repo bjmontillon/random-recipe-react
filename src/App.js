@@ -9,6 +9,7 @@ import Navbar from './Navbar/Navbar';
 import SectionOne from './Section/Section';
 import Cardcomponent from './Card/Cardcomponent';
 import Ingredients from './Ingredients/Ingredients';
+import Share from './Share/Share'
 import Instructions from './Instructions/Instructions';
 import Reactplayer from './Reactplayer/reactplayer';
 import Footer from './Footer/Footer';
@@ -118,7 +119,7 @@ class App extends React.Component {
         
     return (
       
-      <Container className={this.props.classes.appContainer}  spacing={4}>
+      <Container className={this.props.classes.appContainer} maxWidth="md"spacing={4}>
       <Grid container>
         <Grid item xs={12}><Header /></Grid>
         <Grid item xs={12}><Navbar /></Grid>
@@ -134,7 +135,20 @@ class App extends React.Component {
                 strCategory={this.state.strCategory}
                 strArea={this.state.strArea}
                 />
-          <Grid item xs={12} className={this.props.classes.buttonContainer}>
+        </Grid>
+
+          
+
+          <Grid item xs={12} lg={6}>
+            <Ingredients newStrIngredientsList={newStrIngredientsList} newStrMeasurementList={newStrMeasurementList}/>
+          </Grid>
+
+          
+
+        </Grid>
+
+        <Grid container>
+          <Grid item xs={12} lg={6} className={this.props.classes.buttonContainer}>
             <Button onClick={this.randomRecipe}
               endIcon={<AutorenewIcon />} 
               className="myButton"  
@@ -145,14 +159,11 @@ class App extends React.Component {
               Random Recipe
             </Button>
           </Grid>
-        </Grid>
-
-          
-
           <Grid item xs={12} lg={6}>
-            <Ingredients newStrIngredientsList={newStrIngredientsList} newStrMeasurementList={newStrMeasurementList}/>
+                <Share />
           </Grid>
         </Grid>
+        
           
         <Grid item className={this.props.classes.instructionsContainer} xs={12} lg={6}>
           <Instructions strInstructions={this.state.strInstructions} />
