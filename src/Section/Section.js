@@ -16,17 +16,55 @@ const useStyles = makeStyles ({
 }) 
 
 
-const SectionOne = () => {
+class SectionOne extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            imageThumb: null,
+        }
 
-    const classes = useStyles();
+        this.fetchImage = this.fetchImage.bind(this)
+    }
+    
+    componenDidMount(){
+        this.fetchImage()
+    ;
+    }
 
-    return (
-        <Grid container className={classes.sectionContainer}>
-            <Grid item xs={12} className={classes.sectionOne}></Grid>
+    
+    
+    
+   fetchImage ()
+{
+    fetch ("https://www.themealdb.com/api/json/v1/1/categories.php", {
+      method: 'GET',
+        headers : {
+          Accept: "application/json",
+        }
+    })
+
+    .then (response => response.json ())
+    .then (json => {
+        console.log(json)
+        // this.setState ({
+        //     imageThumb: json.meals[0].[1]
+            
+        // })
+        // console.log(json)
+
+    })
+}
+    render () {
+        
+
+        return (
+        <Grid container>
+            <Grid item xs={12} ></Grid>
         </Grid>
 
 
     )
+    }
 
 
 } 

@@ -123,7 +123,7 @@ class App extends React.Component {
       <Grid container>
         <Grid item xs={12}><Header /></Grid>
         <Grid item xs={12}><Navbar /></Grid>
-        <Grid item xs={12}><SectionOne /></Grid>
+        <Grid item xs={12} ><SectionOne /></Grid>
         <Grid container className={this.props.classes.sectionTwo}>
           <Grid item xs={12} lg={6}>
               <Cardcomponent 
